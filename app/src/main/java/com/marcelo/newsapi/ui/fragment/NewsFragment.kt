@@ -11,6 +11,8 @@ import com.marcelo.newsapi.R
 import com.marcelo.newsapi.data.repository.NewsFANApiDataSource
 import com.marcelo.newsapi.data.repository.NewsDbDataSource
 import com.marcelo.newsapi.data.repository.NewsRepository
+import com.marcelo.newsapi.data.repository.NewsRetrofitApiDataSource
+import com.marcelo.newsapi.data.services.WebApiAccess
 import com.marcelo.newsapi.ui.adapter.NewsAdapter
 import com.marcelo.newsapi.ui.viewmodel.NewsViewModel
 import kotlinx.android.synthetic.main.main_fragment.*
@@ -21,10 +23,9 @@ class NewsFragment : Fragment(R.layout.main_fragment) {
         object : ViewModelProvider.Factory {
             override fun <T : ViewModel?> create(modelClass: Class<T>): T {
                 val newsDbDataSource = NewsDbDataSource()
-                //val newsApiDataSource = NewsApiDataSource(WebApiAccess.newsApi)
+                //val newsApiDataSource = NewsRetrofitApiDataSource(WebApiAccess.newsApi)
                 val newsApiDataSource = NewsFANApiDataSource()
-                val newsRepository =
-                    NewsRepository(requireContext(), newsDbDataSource, newsApiDataSource)
+                val newsRepository = NewsRepository(requireContext(), newsDbDataSource, newsApiDataSource)
 
                 return NewsViewModel(newsRepository) as T
             }
