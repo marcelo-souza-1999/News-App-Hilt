@@ -26,6 +26,11 @@ usado também no projeto o Kotlin Coroutines, Dagger-Hilt para injeção de depe
 
 - Exibi uma lista de noticias que fornece as manchetes principais e mais recentes
 
+## Para executar o app
+
+- Renomeie o arquivo **gradle.properties.example para gradle.properties*, e na linha **KEY_NEWS_API="Insira sua chave da API"**
+
+
 ## Desenvolvedor
 
 * **Marcelo Souza** : @marcelo-souza-1999 (https://github.com/marcelo-souza-1999/)
