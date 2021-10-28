@@ -1,4 +1,6 @@
 package com.marcelo.newsapi.data.repository
 
-class NewsDbDataSource {
+import javax.inject.Inject
+
+class NewsDbDataSource @Inject constructor(){
 }
