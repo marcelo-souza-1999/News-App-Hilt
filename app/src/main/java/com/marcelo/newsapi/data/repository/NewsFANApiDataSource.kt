@@ -6,9 +6,10 @@ import com.marcelo.newsapi.data.model.NewsResult
 import com.androidnetworking.AndroidNetworking
 import com.androidnetworking.error.ANError
 import com.androidnetworking.interfaces.ParsedRequestListener
+import javax.inject.Inject
 import kotlin.coroutines.suspendCoroutine
 
-class NewsFANApiDataSource : NewsApiDataSource {
+class NewsFANApiDataSource @Inject constructor() : NewsApiDataSource {
 
     override suspend fun fetchNews(): NewsResult {
         return suspendCoroutine { continuation ->
