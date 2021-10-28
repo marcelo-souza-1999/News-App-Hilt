@@ -16,6 +16,7 @@ class NewsRetrofitApiDataSource @Inject constructor(private val newsApiClient: N
             is NetworkResponse.ServerError -> {
                 NewsResult.ApiError(newsResponse.code, newsResponse.body?.message)
             }
+
             else -> NewsResult.UnknownError("Unknown error")
         }
     }
