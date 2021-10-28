@@ -1,9 +1,6 @@
 package com.marcelo.newsapi.directory
 
-import com.marcelo.newsapi.data.repository.NewsApiDataSource
-import com.marcelo.newsapi.data.repository.NewsFANApiDataSource
-import com.marcelo.newsapi.data.repository.NewsRepository
-import com.marcelo.newsapi.data.repository.NewsRepositoryInterface
+import com.marcelo.newsapi.data.repository.*
 import dagger.Binds
 import dagger.Module
 import dagger.hilt.InstallIn
@@ -23,6 +20,6 @@ abstract class HiltModules {
     @Singleton
     @Binds
     abstract fun bindApiDataSource(
-        apiDataSource: NewsFANApiDataSource
+        apiDataSource: NewsRetrofitApiDataSource
     ): NewsApiDataSource
 }
